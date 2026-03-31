@@ -75,7 +75,7 @@ color: #777;
 <body>
 
 <header>
-<img src="132ee426-4689-4c2d-9cf8-5824851306d7.png" alt="Pulse of the Republic Logo" style="height:60px;">
+<div class="logo">Pulse of the Republic</div>
 </header>
 
 <section class="hero">
