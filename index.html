@@ -281,6 +281,13 @@
       }
     }
   </style>
+  .newsletter-box form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 </head>
 <body>
 
@@ -305,10 +312,11 @@
       <h1>American politics, explained clearly.</h1>
       <p>Get fast, factual updates on what matters in Washington and across the country — without spin, fluff, or information overload.</p>
 
-      <div class="signup">
-        <input type="email" placeholder="Enter your email">
-        <button>Subscribe Free</button>
-      </div>
+     <form class="signup" action="https://formspree.io/f/yourformid" method="POST">
+  <form action="https://formspree.io/f/yourformid" method="POST">
+  <input type="email" name="email" placeholder="Enter your email" required>
+  <button type="submit">Join the Brief</button>
+</form>
     </div>
 
     <div class="hero-side">
