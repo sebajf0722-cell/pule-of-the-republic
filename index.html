@@ -1,131 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pulse of the Republic</title>
-<style>
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: #ffffff;
-color: #111;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse of the Republic</title>
+  <meta name="description" content="Clear, concise American political coverage without the noise.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-header {
-padding: 20px;
-border-bottom: 1px solid #eee;
-display: flex;
-justify-content: space-between;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #111;
+      line-height: 1.6;
+    }
 
-.logo {
-font-weight: bold;
-font-size: 20px;
-}
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+    }
 
-.hero {
-padding: 60px 20px;
-text-align: center;
-}
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-.hero h1 {
-font-size: 32px;
-margin-bottom: 10px;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: bold;
+      font-size: 22px;
+    }
 
-.hero p {
-color: #555;
-margin-bottom: 20px;
-}
+    .logo img {
+      height: 60px;
+      width: auto;
+    }
 
-input[type="email"] {
-padding: 10px;
-width: 250px;
-max-width: 80%;
-}
+    .nav-links a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: #1f2937;
+      font-size: 15px;
+      font-weight: 600;
+    }
 
-button {
-padding: 10px 15px;
-background: #0b3d91;
-color: white;
-border: none;
-cursor: pointer;
-}
+    .nav-links a:hover {
+      color: #0b3d91;
+    }
 
-.section {
-padding: 40px 20px;
-max-width: 800px;
-margin: auto;
-}
+    .hero {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
 
-.article {
-border-bottom: 1px solid #eee;
-padding: 20px 0;
-}
+    .hero-main {
+      background: linear-gradient(135deg, #ffffff, #eef3ff);
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
 
-.footer {
-text-align: center;
-padding: 30px;
-color: #777;
-}
-</style>
+    .hero-main h1 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .hero-main p {
+      font-size: 18px;
+      color: #4b5563;
+      margin-bottom: 24px;
+    }
+
+    .signup {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .signup input {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .signup button {
+      padding: 14px 18px;
+      background: #0b3d91;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .signup button:hover {
+      background: #092f70;
+    }
+
+    .hero-side {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .hero-side h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .hero-side p {
+      color: #4b5563;
+      margin-bottom: 18px;
+    }
+
+    .mini-story {
+      padding-top: 14px;
+      margin-top: 14px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .card p {
+      color: #374151;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: bold;
+      color: #0b3d91;
+      background: #eaf1ff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-box {
+      background: white;
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+
+    .sidebar-box h3 {
+      margin-top: 0;
+    }
+
+    .trust-list {
+      padding-left: 18px;
+      color: #374151;
+    }
+
+    .newsletter {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .newsletter-box {
+      background: linear-gradient(135deg, #0b3d91, #102a56);
+      color: white;
+      padding: 36px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .newsletter-box h2 {
+      margin-top: 0;
+      font-size: 34px;
+    }
+
+    .newsletter-box p {
+      color: #dbeafe;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .newsletter-box input {
+      padding: 14px;
+      width: 280px;
+      max-width: 80%;
+      border: none;
+      border-radius: 10px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    .newsletter-box button {
+      padding: 14px 18px;
+      background: #dc2626;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      color: #6b7280;
+      padding: 30px 20px 50px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 14px;
+      }
+
+      .hero-main h1 {
+        font-size: 34px;
+      }
+
+      .section h2,
+      .newsletter-box h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-<div class="logo">
-  <img src="logo.png" alt="Pulse of the Republic Logo" style="height:60px;">
-</div>
-</header>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <img src="logo.png" alt="Pulse of the Republic Logo">
+        <span>Pulse of the Republic</span>
+      </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Latest</a>
+        <a href="#">Analysis</a>
+        <a href="#">About</a>
+      </div>
+    </div>
+  </header>
 
-<section class="hero">
-<h1>Politics, Explained Simply</h1>
-<p>Get clear, unbiased updates on American politics—twice a week.</p>
+  <section class="hero">
+    <div class="hero-main">
+      <div class="tag">NONPARTISAN POLITICAL BRIEFING</div>
+      <h1>American politics, explained clearly.</h1>
+      <p>Get fast, factual updates on what matters in Washington and across the country — without spin, fluff, or information overload.</p>
 
-<input type="email" placeholder="Enter your email">
-<button>Subscribe</button>
-</section>
+      <div class="signup">
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe Free</button>
+      </div>
+    </div>
 
-<section class="section">
-<h2>Featured Article</h2>
-<div class="article">
-<h3>What Just Happened in Washington</h3>
-<p><strong>TL;DR:</strong> Major policy discussions are shaping upcoming legislation.</p>
-</div>
-</section>
+    <div class="hero-side">
+      <h3>Why readers come here</h3>
+      <p>We break down major political developments into quick, useful briefings for busy readers.</p>
 
-<section class="section">
-<h2>Latest Updates</h2>
+      <div class="mini-story">
+        <strong>Quick summaries</strong>
+        <div>TL;DR coverage before the deep dive.</div>
+      </div>
 
-<div class="article">
-<h3>New Bill Sparks Debate</h3>
-<p>Quick breakdown of what’s happening and why it matters.</p>
-</div>
+      <div class="mini-story">
+        <strong>Clear structure</strong>
+        <div>What happened, why it matters, and what’s next.</div>
+      </div>
 
-<div class="article">
-<h3>Election Developments</h3>
-<p>Key updates from across the country.</p>
-</div>
-</section>
+      <div class="mini-story">
+        <strong>Built for trust</strong>
+        <div>Concise reporting designed to reduce noise and bias.</div>
+      </div>
+    </div>
+  </section>
 
-<section class="section">
-<h2>Why Trust Us</h2>
-<p>We deliver clear, fact-based political updates without bias, helping you stay informed without the noise.</p>
-</section>
+  <section class="section">
+    <h2>Featured Article</h2>
 
-<section class="hero">
-<h2>Stay Informed</h2>
-<p>Join readers who want fast, reliable political updates.</p>
-<input type="email" placeholder="Enter your email">
-<button>Subscribe</button>
-</section>
+    <div class="grid">
+      <div>
+        <div class="card">
+          <div class="tag">FEATURED</div>
+          <h3>What Just Happened in Washington</h3>
+          <p><strong>TL;DR:</strong> Major policy discussions are shaping upcoming legislation and setting the stage for the next round of national debate.</p>
+          <p>This week’s developments could affect everything from federal spending priorities to how the next election cycle is framed.</p>
+        </div>
 
-<div class="footer">
-© 2026 Pulse of the Republic
-</div>
+        <div class="card">
+          <div class="tag">LATEST</div>
+          <h3>New Bill Sparks Debate</h3>
+          <p>Lawmakers are divided over the bill’s long-term impact, with both sides framing it as a turning point in the broader policy fight.</p>
+        </div>
+
+        <div class="card">
+          <div class="tag">LATEST</div>
+          <h3>Election Developments</h3>
+          <p>Key campaign shifts and strategy changes are emerging as candidates reposition for the next stage of the race.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="sidebar-box">
+          <h3>Why Trust Us</h3>
+          <ul class="trust-list">
+            <li>Clear summaries for busy readers</li>
+            <li>Clean, readable structure</li>
+            <li>Focus on facts and context</li>
+            <li>No unnecessary noise</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-box">
+          <h3>Inside every article</h3>
+          <p>Each post follows a consistent format:</p>
+          <ul class="trust-list">
+            <li>TL;DR</li>
+            <li>What Happened</li>
+            <li>Why It Matters</li>
+            <li>What’s Next</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="newsletter-box">
+      <h2>Stay informed without the chaos.</h2>
+      <p>Join Pulse of the Republic for concise political updates delivered in a format you can actually keep up with.</p>
+      <input type="email" placeholder="Enter your email">
+      <button>Join the Brief</button>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Pulse of the Republic. All rights reserved.
+  </footer>
 
 </body>
 </html>
-
