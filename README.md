@@ -75,11 +75,7 @@ color: #777;
 <body>
 
 <header>
-<header style="padding:20px; border-bottom:1px solid #eee;">
-  <div style="display:flex; align-items:center; gap:12px;">
-    <img src="logo.png" alt="Pulse of the Republic Logo" style="height:60px; width:auto;">
-    <span style="font-size:22px; font-weight:bold;">Pulse of the Republic</span>
-  </div>
+<img src="132ee426-4689-4c2d-9cf8-5824851306d7.png" alt="Pulse of the Republic Logo" style="height:60px;">
 </header>
 
 <section class="hero">
